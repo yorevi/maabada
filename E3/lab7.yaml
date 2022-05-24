@@ -15,6 +15,9 @@ spec:
   template:
     metadata:
       name: redis
+      labels:
+        app: ui
+        tier: frontend
     spec:
       containers:
       - name: app1
