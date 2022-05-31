@@ -4,6 +4,7 @@ metadata:
   name: green
   labels:
     app: green
+    canary: green-blue
 spec:
   replicas: 3
   selector:
@@ -13,6 +14,7 @@ spec:
     metadata:
       labels:
         app: green
+        canary: green-blue
     spec:
       containers:
       - name: green
