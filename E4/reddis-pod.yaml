@@ -8,7 +8,7 @@ spec:
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
+        labelSelector:
         - matchExpressions:
             - key: app
               operator: In
