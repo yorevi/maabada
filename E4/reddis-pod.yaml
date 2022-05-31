@@ -8,13 +8,13 @@ spec:
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        labelSelector:
-        - matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - mysql
-          topologyKey: topology.kubernetes.io/hostname
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - mysql
+        topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: reddis-pod
     image: supergiantkir/animals:moose
