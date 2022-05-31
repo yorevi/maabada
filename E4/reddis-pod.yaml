@@ -2,24 +2,21 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: reddis-pod
+  labels:
+    app: reddis
 spec:
   affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/os
-            operator: In
-            values:
-            - linux
+    podAntiAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: another-node-label-key
-            operator: In
-            values:
-            - another-node-label-value
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - mysql
+          topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: reddis-pod
     image: k8s.gcr.io/pause:2.0
