@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: web-pod
   labels:
-    app: reddis
+    app: web
 spec:
   affinity:
     podAffinity:
