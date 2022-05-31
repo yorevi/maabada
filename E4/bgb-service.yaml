@@ -6,8 +6,7 @@ metadata:
     canary: green-blue
 spec:
   selector:
-    labels: 
-      canary: green-blue
+    canary: green-blue
   ports:
     - port: 80
       targetPort: 80
