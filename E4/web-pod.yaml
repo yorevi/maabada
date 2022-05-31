@@ -2,24 +2,21 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: web-pod
+  labels:
+    app: reddis
 spec:
   affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/os
-            operator: In
-            values:
-            - linux
+    podAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: another-node-label-key
-            operator: In
-            values:
-            - another-node-label-value
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - reddis
+          topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: web-pod
     image: k8s.gcr.io/pause:2.0
