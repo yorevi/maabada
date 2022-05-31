@@ -14,7 +14,7 @@ spec:
             operator: In
             values:
             - mysql
-        topologyKey: topology.kubernetes.io/hostname
+        topologyKey: kubernetes.io/hostname
   containers:
   - name: reddis-pod
     image: supergiantkir/animals:moose
