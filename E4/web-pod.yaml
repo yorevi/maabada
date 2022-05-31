@@ -8,12 +8,12 @@ spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        labelSelector:
-        - matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - reddis
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - reddis
           topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: web-pod
