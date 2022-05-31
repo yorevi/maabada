@@ -14,7 +14,7 @@ spec:
             operator: In
             values:
             - reddis
-          topologyKey: topology.kubernetes.io/hostname
+        topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: web-pod
     image: k8s.gcr.io/pause:2.0
