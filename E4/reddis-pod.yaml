@@ -19,4 +19,4 @@ spec:
           topologyKey: topology.kubernetes.io/hostname
   containers:
   - name: reddis-pod
-    image: k8s.gcr.io/pause:2.0
+    image: supergiantkir/animals:moose
