@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "moose.52.51.164.104.nip.io"
+  - host: moose.52.51.164.104.nip.io
     http:
       paths:
       - pathType: Prefix
