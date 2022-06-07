@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: default-ing
+spec:
+  defaultBackend:
+    service:
+      name: moose
+      port:
+        number: 80
