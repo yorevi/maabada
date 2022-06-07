@@ -13,6 +13,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+  - host: "moose.52.51.164.104.nip.io"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/moose"
+        backend:
+          service:
+            name: moose-svc
+            port:
+              number: 80
   - http:
       paths:
       - path: /bear(/|$)(.*)
