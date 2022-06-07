@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-	- host: "animal.52.51.164.104.nip.io"
+  - host: "animal.52.51.164.104.nip.io"
     http:
       paths:
       - path: /bear(/|$)(.*)
