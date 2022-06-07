@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: bear2-host-ingress
   annotations:
+    nginx.ingress.kubernetes.io/canary: true
     # type of authentication
     nginx.ingress.kubernetes.io/auth-type: basic
     # name of the secret that contains the user/password definitions
